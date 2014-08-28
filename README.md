@@ -1,7 +1,4 @@
 murmur
 ======
 
-like a heartbeat, but not
-
-
-hoping to recreate the pinger app but make it a little sexier
+just a stupid pinging web app... similar to pinger, but stupider
