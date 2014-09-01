@@ -53,6 +53,10 @@
         display: inline-block;
       }
 
+      .label-default {
+        background-image: linear-gradient(#585858, #424242 60%, #333333);
+      }
+
       .label-success {
         background-image: linear-gradient(#58AC58, #42A442 60%, #339E33);
       }
@@ -74,6 +78,13 @@
 
       .badge-danger {
         background-color: #9E3333;
+      }
+
+      .text-success {
+        color: #339E33;
+      }
+      .text-danger {
+        color: #9E3333;
       }
 
       .navbar-bottom {
@@ -163,14 +174,14 @@
             foreach ($array['devices']['node'] as $n) {
               if ($n['category'] == $i){
                 if($n['check'] == "ping"){
-                  print "<span class=\"label label-danger\" id=\"ping-".$n['ip'].
+                  print "<span class=\"label label-default\" id=\"ping-".$n['ip'].
                         "\"><strong>".$n['hostname']."</strong><br /><small>".$n['ip']."</small></span> ";
                   ## generates our javascript string
                   $js_str = $js_str."$.getJSON(\"backend/php.php?action=ping&category=".$i."&server=".$n['ip']."&timeout=".$timeout."\",callBack);\n";
                   ##//  THIS IS GOOD!!!   $.getJSON("backend/php.php?action=ping&server=198.199.99.234&timeout=2",callBack);
                 }else{
-                  print "<span class=\"label label-danger\" id=\"socket-".$n['ip']."-".$n['port'].
-                        "\"><strong>".$n['hostname']."</strong><br /><small>".$n['ip']."</small></span> ";
+                  print "<span class=\"label label-default\" id=\"socket-".$n['ip']."-".$n['port'].
+                        "\"><strong>".$n['hostname']."</strong><br /><small>".$n['ip']." (".$n['port'].")</small></span> ";
                   ## generates our javascript string
                   $js_str = $js_str."$.getJSON(\"backend/php.php?action=socket&category=".$i."&server=".$n['ip']."&timeout=".$timeout."&port=".$n['port']."\",callBack);\n";
                 }
@@ -259,10 +270,11 @@
             //alert(" res == 1; do nothing ");
             // it was up and is now up, do nothing
           //}else if($("#"+json.action+"-"+json.server).hasClass("label-danger")){ 
-          }else{
-            if(catDown != "0"){
-              catDown--;
-            }
+          }else if($(id).hasClass("label-danger")){
+            ////if(catDown != "0"){
+            ////  catDown--;
+            ////}
+            catDown--;
             catUp++;
             $("#"+json.category+"-success").text(catUp);
             $("#"+json.category+"-danger").text(catDown);
@@ -272,13 +284,17 @@
             // by default we're setting to down
             $(id).toggleClass("label-danger"); 
             $(id).toggleClass("label-success"); 
-            $("#events").prepend($(id).text()+" came <span class=\"success\">up</span> at <strong>"+$('#timeUpdated').text()+"</strong>; ");
+            $("#events").prepend($(id).text()+" came <span class=\"text-success\">up</span> at <strong>"+$('#timeUpdated').text()+"</strong>; ");
             ////$("#"+json.action+"-"+json.server).toggleClass("label-danger"); 
             ////$("#"+json.action+"-"+json.server).toggleClass("label-success"); 
             ////$("#events").prepend($('#'+json.action+'-'+json.server).text()+" came <span class=\"success\">up</span> at <strong>"+$('#updateTime').text()+"</strong>; ");
-          //}else{
+          }else{
             //alert(" res == 1; toggle label-success only ");
             // it was nothing, now up, add up
+            catUp++;
+            $("#"+json.category+"-success").text(catUp);
+            $(id).toggleClass("label-default"); 
+            $(id).toggleClass("label-success"); 
             //$("#"+json.action+"-"+json.server).toggleClass("label-success"); 
             //$("#events").prepend($('#'+json.action+'-'+json.server).text()+" is <span class=\"success\">up</span>; ");
           }
@@ -286,21 +302,26 @@
           if($(id).hasClass("label-danger")){ 
             // it was down and is now down, do nothing
           //}else if($(id).hasClass("label-success")){ 
-          }else{
+          }else if($(id).hasClass("label-success")){
             // it was down and is now up, get rid of up, add down
             // add an alert or something here, news feed???
-            if(catUp != "0"){
-              catUp--;
-            }
+            ////if(catUp != "0"){
+            ////  catUp--;
+            ////}
+            catUp--;
             catDown++;
             $("#"+json.category+"-success").text(catUp);
             $("#"+json.category+"-danger").text(catDown);
 
             $(id).toggleClass("label-success");
             $(id).toggleClass("label-danger"); 
-            $("#events").prepend($(id).text()+" went <span class=\"danger\">down</span> at <strong>"+$('#timeUpdated').text()+"</strong>; ");
-          //}else{
-            // it was nothing, now down, add down
+            $("#events").prepend($(id).text()+" went <span class=\"text-danger\">down</span> at <strong>"+$('#timeUpdated').text()+"</strong>; ");
+          }else{
+            // it was default, now down, add down
+            catDown++;
+            $("#"+json.category+"-danger").text(catDown);
+            $(id).toggleClass("label-default"); 
+            $(id).toggleClass("label-danger"); 
             //$("#"+json.id).toggleClass("down");
             //$("#feed").prepend($('#'+json.id).text()+" is <span class=\"feeddown\">down</span>; ");
           }
