@@ -1,7 +1,6 @@
 murmur
 ======
 
-like a heartbeat, but not
+just a stupid pinging web app... similar to pinger, but stupider
 
-
-hoping to recreate the pinger app but make it a little sexier
+demo: http://apps.0x0f.io/murmur/?conf=test
