@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+  <name>demo</name>
+  <api>
+    <!-- multiple keys can be given out as stupid security via GET; TBD -->
+    <key></key> 
+  </api>
+  <secret></secret> <!-- checked in seperate file if valid via POST; TBD -->
+  <settings>
+    <!-- bool for showing system's IP (def: true) -->
+    <showIP>true</showIP>
+    <!-- bool for showing system's hostname (def: true) -->
+    <showHostName>true</showHostName>
+    <!-- bool for showing port number instead of name spec'd in /etc/services (def: true); TBD -->
+    <showPort>true</showPort>
+    <!-- this is a bool for showing "conf > name" in place of "murmur" in navbar (def: false) -->
+    <showBrand>true</showBrand>
+    <!-- this is the default value passed to ping and netcat (def: 1) -->
+    <timeout>1</timeout>
+    <!-- frequency of how often the devices are polled (def: 30) -->
+    <frequency>30</frequency>
+  </settings>
+  <devices>
+    <!--  
+          order takes <category name> VALUE 
+              e.g.  
+                  <switch> 100 </switch>
+                  <router> 200 </router>
+                  <server> 300 </server>
+          when parsed for the front end, they will be listed in 
+          in incrementing order using PHP's asort() function
+          note:   count in gaps if you want to add more later
+                  not sure on any limits for MAX  65,000?
+                  nodes within a category will be processed FIFO
+    -->
+    <order>
+      <digitalocean>150</digitalocean>
+      <tata>200</tata>
+      <roadrunner>300</roadrunner>
+      <ncren>350</ncren>
+      <waketech>400</waketech>
+      <localhost>100</localhost>
+    </order>
+    <!--   PING EXAMPLE
+    <node>
+      <category>default</category>
+      <check>ping</check>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    -->
+    <node>
+      <category>digitalocean</category>
+      <check>ping</check>
+      <hostname>238.164.241.192.in-addr.arpa</hostname>
+      <ip>192.241.164.238</ip>
+    </node>
+    <node>
+      <category>digitalocean</category>
+      <check>ping</check>
+      <hostname>22.96.110.66.in-addr.arpa</hostname>
+      <ip>66.110.96.22</ip>
+    </node>
+    <node>
+      <category>digitalocean</category>
+      <check>ping</check>
+      <hostname>5.96.110.66.in-addr.arpa</hostname>
+      <ip>66.110.96.5</ip>
+    </node>
+    <node>
+      <category>tata</category>
+      <check>ping</check>
+      <hostname>if-14-14.tcore2.NTO-New-York.as6453.net</hostname>
+      <ip>66.198.111.126</ip>
+    </node>
+    <node>
+      <category>tata</category>
+      <check>ping</check>
+      <hostname>if-11-2.tcore2.NJY-Newark.as6453.net</hostname>
+      <ip>216.6.87.138</ip>
+    </node>
+    <node>
+      <category>tata</category>
+      <check>ping</check>
+      <hostname>ix-17-0.tcore2.AEQ-Ashburn.as6453.net</hostname>
+      <ip>216.6.87.149</ip>
+    </node>
+    <node>
+      <category>tata</category>
+      <check>ping</check>
+      <hostname>if-3-2.tcore2.NJY-Newark.as6453.net</hostname>
+      <ip>216.6.87.10</ip>
+    </node>
+    <node>
+      <category>roadrunner</category>
+      <check>ping</check>
+      <hostname>ae0.pr1.dca10.tbone.rr.com</hostname>
+      <ip>107.14.17.200</ip>
+    </node>
+    <node>
+      <category>roadrunner</category>
+      <check>ping</check>
+      <hostname>ae-3-0.cr0.dca10.tbone.rr.com</hostname>
+      <ip>66.109.6.80</ip>
+    </node>
+    <node>
+      <category>roadrunner</category>
+      <check>ping</check>
+      <hostname>ae19.rlghncpop-rtr1.southeast.rr.com</hostname>
+      <ip>24.93.64.0</ip>
+    </node>
+    <node>
+      <category>roadrunner</category>
+      <check>ping</check>
+      <hostname>242.47.26.66.in-addr.arpa</hostname>
+      <ip>66.26.47.242</ip>
+    </node>
+    <node>
+      <category>ncren</category>
+      <check>ping</check>
+      <ip>128.109.20.46</ip>
+      <hostname>242.ketech-cc-gw-to-rtp7600-gw.ncren.net</hostname>
+    </node>
+    <node>
+      <category>ncren</category>
+      <check>ping</check>
+      <ip>128.109.9.2</ip>
+      <hostname>rtp7600-gw-tg4-2-to-rtp-crs-gw.ncren.net</hostname>
+    </node>
+    <node>
+      <category>ncren</category>
+      <check>ping</check>
+      <ip>128.109.212.17</ip>
+      <hostname>rtpcrs-gw-to-rlcrs-gw.ncren.net</hostname>
+    </node>
+    <node>
+      <category>waketech</category>
+      <check>ping</check>
+      <ip>198.86.248.254</ip>
+      <hostname>ns1.waketech.edu</hostname>
+    </node>
+    <node>
+      <category>waketech</category>
+      <check>ping</check>
+      <ip>198.86.248.252</ip>
+      <hostname>ns2.waketech.edu</hostname>
+    </node>
+    <node>
+      <category>waketech</category>
+      <check>ping</check>
+      <ip>198.86.248.253</ip>
+      <hostname>253.248.86.198.in-addr.arpa</hostname>
+    </node>
+    <node>
+      <category>waketech</category>
+      <check>ping</check>
+      <ip>198.86.245.126</ip>
+      <hostname>126.245.86.198.in-addr.arpa</hostname>
+    </node>
+    <node>
+      <category>waketech</category>
+      <check>ping</check>
+      <ip>198.86.248.2</ip>
+      <hostname>vpn2.waketech.edu</hostname>
+    </node>
+    <!--   SOCKET EXAMPLE
+    <node>
+      <category>default</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>80</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    -->
+    <node>
+      <category>localhost</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>80</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    <node>
+      <category>localhost</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>22</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+
+  </devices>
+</conf>
+
