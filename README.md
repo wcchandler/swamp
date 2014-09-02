@@ -24,7 +24,7 @@ a stupid pinging web app with the following features:
     **-** i can't really stress this enough.  the web app is stupid.  it doesn't try to do more than it needs.  it doesn't try to assume something messed up.  it just blindly does stuff until it fails.  then you mash F5 and hope it works the next time around.
 
 ## *screenshots*
-[!first screenshot](https://i.imgur.com/ambQS4G.png "first demo screenshot")
+![first screenshot](https://i.imgur.com/ambQS4G.png "first demo screenshot")
 
 ## *dependencies*
     i have this running on a basic ubuntu 14.04 LA~~M~~P stack on digital ocean.  i also have it running on the latest pidora release[20] (obviously on a raspberry pi)
