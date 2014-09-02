@@ -28,14 +28,26 @@ a stupid pinging web app with the following features:
 
 ## *dependencies*
 
-i have this running on a basic ubuntu 14.04 LA~~M~~P stack on digital ocean.  i also have it running on the latest pidora release[20] (obviously on a raspberry pi)
+* http server that can run php scripts (e.g. apache, httpd)
+* php
+* php-SimpleXML
+* php-JSON
 
 ## *get it running*
+
 * install apache or whatever
 * cd /var/www/html
 * git clone https://github.com/wcchandler/murmur.git
 * point browser to wherever you just put it
 
+## *config*
+there's support for multiple configs.  just cp configs/test.xml configs/whatever.xml and start editing.  i tried to include enough comments for it to be intuitive
 
+## *keep it stupid*
+the main point of this web app is to keep everything stupidly simple.  don't overcomplicate things.  if you need *more* then you should probably look at actual monitoring systems.
+
+## *working environments*
+* ubuntu 14.04 droplet on digital ocean http://apps.0x0f.io/murmur/
+* pidora release (obviously on a raspberry pi) - http://home.0x0f.io/murmur/
 
 
