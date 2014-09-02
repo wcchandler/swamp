@@ -27,7 +27,8 @@ a stupid pinging web app with the following features:
 ![first screenshot](https://i.imgur.com/ambQS4G.png "first demo screenshot")
 
 ## *dependencies*
-    i have this running on a basic ubuntu 14.04 LA~~M~~P stack on digital ocean.  i also have it running on the latest pidora release[20] (obviously on a raspberry pi)
+
+i have this running on a basic ubuntu 14.04 LA~~M~~P stack on digital ocean.  i also have it running on the latest pidora release[20] (obviously on a raspberry pi)
 
 ## *get it running*
 * install apache or whatever
