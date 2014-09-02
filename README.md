@@ -3,6 +3,8 @@ murmur
 
 **murmur** -- a stupid name for a stupid web app...
 
+built as a replacement to [pinger](https://github.com/wcchandler/pinger)
+
 demo: http://apps.0x0f.io/murmur/?conf=demo
 
 ## *what is murmur?*
