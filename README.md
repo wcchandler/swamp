@@ -47,7 +47,7 @@ there's support for multiple configs.  just cp configs/test.xml configs/whatever
 the main point of this web app is to keep everything stupidly simple.  don't overcomplicate things.  if you need *more* then you should probably look at actual monitoring systems.
 
 ## *working environments*
-* ubuntu 14.04 droplet on digital ocean http://apps.0x0f.io/murmur/
-* pidora release (obviously on a raspberry pi) - http://home.0x0f.io/murmur/
+* ubuntu 14.04 droplet on digital ocean - http://apps.0x0f.io/murmur/
+* pidora running on a raspberry pi - http://home.0x0f.io/murmur/
 
 
