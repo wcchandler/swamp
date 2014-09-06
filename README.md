@@ -34,6 +34,8 @@ a stupid pinging web app with the following features:
 * php
 * php-SimpleXML
 * php-JSON
+* *optional* - jQuery
+* *optional* - bootstrap js
 
 ## *get it running*
 
