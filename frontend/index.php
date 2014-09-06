@@ -24,6 +24,7 @@
     $items = array_keys($order);
     $timeout = $array['settings']['timeout'];
     $frequency = $array['settings']['frequency'];
+    $hotlink = $array['settings']['hotlink'];
   }else{
     $conf = "NULL";
   }
@@ -38,7 +39,13 @@
     <!-- https://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29 -->
     <!-- hotlinking -->
     <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="http://bootswatch.com/slate/bootstrap.css" rel="stylesheet">
+    <?php 
+      if($hotlink){
+        print "<link href=\"http://bootswatch.com/slate/bootstrap.css\" rel=\"stylesheet\">\n";
+      }else{
+        print "<link href=\"frontend/bootstrap.css\" rel=\"stylesheet\">\n";
+      }
+    ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -235,10 +242,17 @@
 
     <!-- JavaScript placed at the end of the document so the pages load faster -->
     <!-- Include the jQuery library -->
-    <script src="//code.jquery.com/jquery-1.7.2.min.js"></script>
- 
     <!-- Incorporate the Bootstrap JavaScript plugins -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <?php 
+      if($hotlink){
+        print "<script src=\"//code.jquery.com/jquery-1.7.2.min.js\"></script>\n".
+              "<script src=\"//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js\"></script>\n";
+      }else{
+        print "<script src=\"frontend/jquery-1.7.2.min.js\"></script>\n".
+              "<script src=\"frontend/bootstrap.min.js\"></script>\n";
+      }
+    ?>
+
 
 
     <!-- here's the magic of this thing -->

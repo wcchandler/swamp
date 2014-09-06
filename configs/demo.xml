@@ -19,6 +19,22 @@
     <timeout>1</timeout>
     <!-- frequency of how often the devices are polled (def: 30) -->
     <frequency>30</frequency>
+    <!-- this is to enable hotlinking of jQuery, bootstrap and the bootstrap theme
+         pros:
+           - always up-to-date
+           - less draw on your server
+           - gets pulled from a CDN which is probably faster
+           - might already be cached by your browser
+         cons:
+           - you're a whore
+           - you probably don't have permissions
+           - shouldn't be done in production
+           - you don't control it
+           - an update could break stuff
+           - authors could disable it at any time
+         that being said, the default value is true because it's useful for testing.
+         in fact it's not even in the git repo.  i should probably check the licenses  (def: true) -->
+    <hotlink>true</hotlink>
   </settings>
   <devices>
     <!--  
