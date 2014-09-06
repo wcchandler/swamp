@@ -51,5 +51,5 @@ the main point of this web app is to keep everything stupidly simple.  don't ove
 ## *working environments*
 * ubuntu 14.04 droplet on digital ocean - http://apps.0x0f.io/murmur/
 * pidora running on a raspberry pi - http://home.0x0f.io/murmur/
-
+* **non-working environment** - openshift's free stuff. :(  their firewall is too restrictive
 
