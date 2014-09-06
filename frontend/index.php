@@ -32,7 +32,7 @@
 
 <html>
   <head>
-    <title>murmur - just a placeholder name</title>
+    <title>murmur</title>
     <!-- Include the bootstrap stylesheets -->
     <!-- originally pulled from wikipedia on Jul 22 2014 -->
     <!-- https://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29 -->
@@ -113,7 +113,14 @@
       }
 
     </style>
-
+    <?php
+      ## could probably implement some checks...  but it shouldn't matter.
+      ## let's set some js vars
+      print "\n<script>".
+            "\nvar timeout=".$timeout.";".
+            "\nvar frequency=".$frequency.";".
+            "\n</script>\n";
+    ?>
   </head>
  
   <body>
@@ -139,23 +146,31 @@
       </div> <!-- end of navbar-header -->
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
+          <!--   HOLY CRAP THIS IS A LOT OF WORK...  'F it
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">timeout: <?php echo $timeout; ?>s <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">timeout: <script>document.write(timeout);</script>s <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li class="active"><a href="#">1 second</a></li>
               <li><a href="#">2 seconds</a></li>
               <li><a href="#">5 seconds</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><?php #echo $timeout;?> second</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">frequency: <?php echo $frequency; ?>s <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">frequency: <script>document.write(frequency);</script>s <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li class="active"><a href="#">30 seconds</a></li>
               <li><a href="#">60 seconds</a></li>
               <li><a href="#">5 minutes</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><?php #echo $frequency;?> seconds</a></li>
             </ul>
           </li>
-          <p class="navbar-text">Last updated: <span id="timeUpdated">-</span> (server time)</p>
+          -->
+          <li><a href="#">timeout: <?php echo $timeout; ?>s</a></li>   
+          <li><a href="#">frequency: <?php echo $frequency; ?>s</a></li>   
+          <li><p class="navbar-text">Last updated: <span id="timeUpdated">-</span> (server time)</p></li>
         </ul>
       </div>
     </div>

@@ -175,6 +175,20 @@
     -->
     <node>
       <category>localhost</category>
+      <check>ping</check>
+      <ip>127.0.0.1</ip>
+      <hostname>localhost</hostname>
+    </node>
+    <node>
+      <category>localhost</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>22</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    <node>
+      <category>localhost</category>
       <check>socket</check>
       <type>tcp</type>
       <port>80</port>
@@ -185,7 +199,23 @@
       <category>localhost</category>
       <check>socket</check>
       <type>tcp</type>
-      <port>22</port>
+      <port>443</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    <node>
+      <category>localhost</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>8888</port>
+      <hostname>localhost</hostname>
+      <ip>127.0.0.1</ip>
+    </node>
+    <node>
+      <category>localhost</category>
+      <check>socket</check>
+      <type>tcp</type>
+      <port>3306</port>
       <hostname>localhost</hostname>
       <ip>127.0.0.1</ip>
     </node>
