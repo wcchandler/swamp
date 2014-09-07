@@ -73,7 +73,7 @@
       }
 
       .label {
-        font-size: 85%;
+        font-size: 100%; /* resetting back */
         margin: 0.25em 0;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
         border-radius: 0.15em;
