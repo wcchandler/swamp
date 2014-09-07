@@ -55,3 +55,6 @@ the main point of this web app is to keep everything stupidly simple.  don't ove
 * pidora running on a raspberry pi - http://home.0x0f.io/murmur/
 * **non-working environment** - openshift's free stuff. :(  their firewall is too restrictive
 
+## *versions*
+v0.0.1 - Sep 6, 2014 - feature parity with [pinger](https://github.com/wcchandler/pinger)
+
