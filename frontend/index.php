@@ -235,7 +235,8 @@
 
 
       <div class="footer navbar-bottom">
-        source on <a href="https://github.com/wcchandler/murmur">github</a>
+        source on <a href="https://github.com/wcchandler/murmur">github</a><br />
+        v<?php echo file_get_contents('VERSION'); ?><br />
       </div>
 
     </div> <!-- end of container-fluid -->
