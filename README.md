@@ -2,7 +2,8 @@
 ======
 
 ~~**murmur** -- a stupid name for a stupid web app...~~
-**swamp** -- **s**stupid **w**eb **a**pp **m**onster **p**ing
+
+**swamp** -- **s** tupid **w** eb **a** pp **m** onster **p** ing
 
 built as a replacement to [pinger](https://github.com/wcchandler/pinger)
 
