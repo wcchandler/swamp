@@ -13,7 +13,7 @@
     <showHostName>true</showHostName>
     <!-- bool for showing port number instead of name spec'd in /etc/services (def: true); TBD -->
     <showPort>true</showPort>
-    <!-- this is a bool for showing "conf > name" in place of "murmur" in navbar (def: false) -->
+    <!-- this is a bool for showing "conf > name" in place of "swamp" in navbar (def: false) -->
     <showBrand>true</showBrand>
     <!-- this is the default value passed to ping and netcat (def: 1) -->
     <timeout>1</timeout>

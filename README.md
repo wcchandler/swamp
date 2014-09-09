@@ -7,7 +7,7 @@
 
 built as a replacement to [pinger](https://github.com/wcchandler/pinger)
 
-demo: http://apps.0x0f.io/murmur/?conf=demo
+demo: http://apps.0x0f.io/swamp/?conf=demo
 
 ## *what is swamp?*
 a stupid pinging web app with the following features:
@@ -53,8 +53,8 @@ there's support for multiple configs.  just cp configs/test.xml configs/whatever
 the main point of this web app is to keep everything stupidly simple.  don't overcomplicate things.  if you need *more* then you should probably look at actual monitoring systems.
 
 ## *working environments*
-* ubuntu 14.04 droplet on digital ocean - http://apps.0x0f.io/murmur/
-* pidora running on a raspberry pi - http://home.0x0f.io/murmur/
+* ubuntu 14.04 droplet on digital ocean - http://apps.0x0f.io/swamp/
+* pidora running on a raspberry pi - http://home.0x0f.io/swamp/
 * **non-working environment** - openshift's free stuff. :(  their firewall is too restrictive
 
 ## *versions*

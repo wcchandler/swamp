@@ -33,7 +33,7 @@
 
 <html>
   <head>
-    <title>murmur</title>
+    <title>swamp</title>
     <!-- Include the bootstrap stylesheets -->
     <!-- originally pulled from wikipedia on Jul 22 2014 -->
     <!-- https://en.wikipedia.org/wiki/Bootstrap_%28front-end_framework%29 -->
@@ -147,7 +147,7 @@
           if ($array['settings']['showBrand'] == "true"){
             print "\n<a class=\"navbar-brand\" href=\"#\">".$array['name']."</a>\n";
           }else{
-            print "\n<a class=\"navbar-brand\" href=\"#\">murmur</a>\n";
+            print "\n<a class=\"navbar-brand\" href=\"#\">swamp</a>\n";
           }
         ?>
       </div> <!-- end of navbar-header -->
@@ -235,7 +235,7 @@
 
 
       <div class="footer navbar-bottom">
-        source on <a href="https://github.com/wcchandler/murmur">github</a><br />
+        source on <a href="https://github.com/wcchandler/swamp">github</a><br />
         v<?php echo file_get_contents('VERSION'); ?><br />
       </div>
 
