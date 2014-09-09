@@ -9,7 +9,7 @@ built as a replacement to [pinger](https://github.com/wcchandler/pinger)
 
 demo: http://apps.0x0f.io/swamp/?conf=demo
 
-## *what is swamp?*
+## *what is the swamp?*
 a stupid pinging web app with the following features:
 
 * instance based
