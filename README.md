@@ -9,7 +9,7 @@ built as a replacement to [pinger](https://github.com/wcchandler/pinger)
 
 demo: http://apps.0x0f.io/murmur/?conf=demo
 
-## *what is murmur?*
+## *what is swamp?*
 a stupid pinging web app with the following features:
 
 * instance based
@@ -43,7 +43,7 @@ a stupid pinging web app with the following features:
 
 * install apache or whatever
 * cd /var/www/html
-* git clone https://github.com/wcchandler/murmur.git
+* git clone https://github.com/wcchandler/swamp.git
 * point browser to wherever you just put it
 
 ## *config*
