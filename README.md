@@ -60,3 +60,12 @@ the main point of this web app is to keep everything stupidly simple.  don't ove
 ## *versions*
 v0.0.1 - Sep 6, 2014 - feature parity with [pinger](https://github.com/wcchandler/pinger)
 
+## *how-to of fedora 20 on DO*
+    yum install php httpd php-xml git
+    systemctl start httpd
+    firewall-cmd --add-service=http
+    cd /var/www/html/
+    git clone https://github.com/wcchandler/swamp.git
+
+
+
