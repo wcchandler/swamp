@@ -30,6 +30,8 @@ a stupid pinging web app with the following features:
 ## *screenshots*
 ![first screenshot](https://i.imgur.com/ambQS4G.png "first demo screenshot")
 
+![second screenshot](https://i.imgur.com/79makeA.png "second demo screenshot")
+
 ## *dependencies*
 
 * http server that can run php scripts (e.g. apache, httpd)
