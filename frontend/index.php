@@ -25,6 +25,7 @@
     $timeout = $array['settings']['timeout'];
     $frequency = $array['settings']['frequency'];
     $hotlink = $array['settings']['hotlink'];
+    $columns = $array['settings']['columns'];
   }else{
     $conf = "NULL";
   }
@@ -184,15 +185,38 @@
 
     <!-- end of navbar -->
 
+
+
+    <!-- i like spaces.. -->
+
+
+    <!-- i like spaces.. -->
+
+
     <div class="container-fluid">
 
       <?php
         if(($conf != "NULL") && ($conf != "BAD_KEY")){
+          $count = 0; ## this is our count for column placement
           ## we are good to go, conf was passed with a valid key
           foreach ($items as $i){
-            print "\n<!-- start of $i section -->\n<div class=\"row\"><div class=\"col-lg-12\">".
-                  "<h4>$i <span id=\"".$i."-success\" class=\"badge badge-success\">0</span> <span id=\"".$i."-danger\" class=\"badge badge-danger\">0</span> </h4>".
-                  "<div class=\"panel panel-default\"><div class=\"panel-body\">";
+            if($columns == 1){
+              print "\n<!-- start of $i section -->\n<div class=\"row\"><div class=\"col-lg-12\">".
+                    "<h4>$i <span id=\"".$i."-success\" class=\"badge badge-success\">0</span> <span id=\"".$i."-danger\" class=\"badge badge-danger\">0</span> </h4>".
+                    "<div class=\"panel panel-default\"><div class=\"panel-body\">";
+            }else{
+              if($count%2 == 1){
+                print "\n<!-- start of $i section -->\n<div class=\"row\"><div class=\"col-lg-6\">".
+                      "<h4>$i <span id=\"".$i."-success\" class=\"badge badge-success\">0</span> <span id=\"".$i."-danger\" class=\"badge badge-danger\">0</span> </h4>".
+                      "<div class=\"panel panel-default\"><div class=\"panel-body\">";
+              }else{
+                ## same as above without the new row div
+                print "\n<!-- start of $i section -->\n<div class=\"col-lg-6\">".
+                      "<h4>$i <span id=\"".$i."-success\" class=\"badge badge-success\">0</span> <span id=\"".$i."-danger\" class=\"badge badge-danger\">0</span> </h4>".
+                      "<div class=\"panel panel-default\"><div class=\"panel-body\">";
+              } ## end of if count%2 -- to check if we're in col 1 or col 2
+
+            } ## end of if column conf check
             foreach ($array['devices']['node'] as $n) {
               if ($n['category'] == $i){
                 if($n['check'] == "ping"){
@@ -209,7 +233,17 @@
                 }
               }
             }
-            print "</div></div></div></div>\n<!-- end of $i -->\n";
+            if($columns == 1){
+              print "</div></div></div></div>\n<!-- end of $i -->\n";
+            }else{
+              if($count%2 == 1){
+                print "</div></div></div></div>\n<!-- end of $i -->\n";
+              }else{
+                ## same as above without the extra /div
+                print "</div></div></div>\n<!-- end of $i -->\n";
+              }
+            }
+            $count++;
           } ## end of foreach item
         } ## end of if/else conf statement
       ?>
@@ -221,7 +255,7 @@
             <div class="well well-sm" id="events">
               <?php
                 if($conf == "NULL"){
-                  print "<h4>error:</h4><p>No conf loaded.  Looking for a <a href=\"?conf=demo\">demo</a>?</p>";
+                  print "<h4>error:</h4><p>No conf loaded.  Looking for a <a href=\"?conf=demo\">demo</a>?  Want <a href=\"?conf=demo2\">2 columns</a>?</p>";
                 }elseif($conf == "BAD_KEY"){
                   print "<h4>error:</h4><p>Bad or invalid key.</p>";
                 }else{

@@ -20,7 +20,7 @@
     <!-- frequency of how often the devices are polled (def: 30) -->
     <frequency>30</frequency>
     <!-- columns is the number of columns to use in the frontend (1 or 2; def: 1) -->
-    <columns>1</columns>
+    <columns>2</columns>
     <!-- this is to enable hotlinking of jQuery, bootstrap and the bootstrap theme
          pros:
            - always up-to-date
