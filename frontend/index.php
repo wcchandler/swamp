@@ -120,6 +120,20 @@
         margin-bottom: 1px;
       }
 
+      #good {
+        color: #42E442 !important;
+        font-weight: bold;
+        font-size: 125%;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      }
+
+      #bad {
+        color: #E44242 !important;
+        font-weight: bold;
+        font-size: 125%;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+      }
+
     </style>
     <?php
       ## could probably implement some checks...  but it shouldn't matter.
@@ -144,13 +158,17 @@
           <span class="icon-bar"></span>
         </button>
         <!-- end of hotdog menu -->
+        <a class="navbar-brand">
         <?php 
           if ($array['settings']['showBrand'] == "true"){
-            print "\n<a class=\"navbar-brand\" href=\"#\">".$array['name']."</a>\n";
+            print $array['name'];
           }else{
-            print "\n<a class=\"navbar-brand\" href=\"#\">swamp</a>\n";
+            print "swamp";
           }
         ?>
+        &nbsp;<span class="success" id="good">0</span>&nbsp;   
+        <span class="danger" id="bad">0</span>&nbsp;   
+        </a>
       </div> <!-- end of navbar-header -->
       <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -323,6 +341,8 @@
           var id = "#socket-"+json.server+"-"+json.port;
         }
         id = id.replace(/\./g,'\\.');
+        var totUp = $("#good").text();
+        var totDown = $("#bad").text();
         var catUp = $("#"+json.category+"-success").text();
         var catDown = $("#"+json.category+"-danger").text();
         //document.write("#"+json.action+"-"+json.server+"; res = "+json.res+";");
@@ -340,8 +360,12 @@
             ////}
             catDown--;
             catUp++;
+            totDown--;
+            totUp++;
             $("#"+json.category+"-success").text(catUp);
             $("#"+json.category+"-danger").text(catDown);
+            $("#good").text(totUp);
+            $("#bad").text(totDown);
             //alert(" id == \""+id+"\"; toggle both ");
             //alert(" res == 1; toggle both ");
             // it was down and is now up, get rid of down, add up
@@ -356,7 +380,9 @@
             //alert(" res == 1; toggle label-success only ");
             // it was nothing, now up, add up
             catUp++;
+            totUp++;
             $("#"+json.category+"-success").text(catUp);
+            $("#good").text(totUp);
             $(id).toggleClass("label-default"); 
             $(id).toggleClass("label-success"); 
             //$("#"+json.action+"-"+json.server).toggleClass("label-success"); 
@@ -374,8 +400,12 @@
             ////}
             catUp--;
             catDown++;
+            totUp--;
+            totDown++;
             $("#"+json.category+"-success").text(catUp);
             $("#"+json.category+"-danger").text(catDown);
+            $("#good").text(totUp);
+            $("#bad").text(totDown);
 
             $(id).toggleClass("label-success");
             $(id).toggleClass("label-danger"); 
@@ -383,7 +413,9 @@
           }else{
             // it was default, now down, add down
             catDown++;
+            totDown++;
             $("#"+json.category+"-danger").text(catDown);
+            $("#bad").text(totDown);
             $(id).toggleClass("label-default"); 
             $(id).toggleClass("label-danger"); 
             //$("#"+json.id).toggleClass("down");
