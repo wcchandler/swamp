@@ -59,6 +59,7 @@ the main point of this web app is to keep everything stupidly simple.  don't ove
 
 ## *versions*
 v0.0.2 - Sep 18, 2014 - 2 column support [demo](http://apps.0x0f.io/swamp/?conf=demo2)
+
 v0.0.1 - Sep 6, 2014 - feature parity with [pinger](https://github.com/wcchandler/pinger)
 
 ## *how-to of fedora 20 on DO*
